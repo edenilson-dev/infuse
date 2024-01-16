@@ -1,0 +1,10 @@
+INSERT INTO tb_produto (created_at, nome_produto) VALUES('2024-01-12', 'Arroz');
+INSERT INTO tb_produto (created_at, nome_produto) VALUES('2024-01-12', 'Farinha');
+INSERT INTO tb_produto (created_at, nome_produto) VALUES('2024-01-12', 'Acucar');
+INSERT INTO tb_produto (created_at, nome_produto) VALUES('2024-01-12', 'Feijao');
+INSERT INTO tb_produto (created_at, nome_produto) VALUES('2024-01-12', 'Leite');
+INSERT INTO tb_produto (created_at, nome_produto) VALUES('2024-01-12', 'Oleo');
+INSERT INTO tb_produto (created_at, nome_produto) VALUES('2024-01-12', 'Sardinha');
+INSERT INTO tb_produto (created_at, nome_produto) VALUES('2024-01-12', 'Ovo');
+INSERT INTO tb_produto (created_at, nome_produto) VALUES('2024-01-12', 'Macarrao');
+INSERT INTO tb_produto (created_at, nome_produto) VALUES('2024-01-12', 'Sal');

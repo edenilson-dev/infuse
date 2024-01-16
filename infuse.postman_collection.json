@@ -1,0 +1,114 @@
+{
+	"info": {
+		"_postman_id": "530c25c0-e69e-481e-86d6-fb830ee91763",
+		"name": "infuse",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "30407099"
+	},
+	"item": [
+		{
+			"name": "Pedidos",
+			"item": [
+				{
+					"name": "Salvar Pedido",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"createdAt\": null,\r\n    \"valorPedido\": null,\r\n    \"clienteId\": 2,\r\n    \"itens\": [\r\n        {\r\n            \"produtoId\":1,\r\n            \"pedidoId\": null,\r\n            \"valorUnitario\": 10.52,\r\n            \"quantidade\": 5\r\n        },\r\n        {\r\n            \"produtoId\":2,\r\n            \"pedidoId\": null,\r\n            \"valorUnitario\": 2.20,\r\n            \"quantidade\": 20\r\n        }\r\n    ]\r\n        \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/api/v1/pedidos"
+					},
+					"response": []
+				},
+				{
+					"name": "consultar Pedido com Filtro",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/xml",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/api/v1/pedidos?page=0&size=10&createdInicio=2023-12-01&createdFim=2024-01-14",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"pedidos"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								},
+								{
+									"key": "createdInicio",
+									"value": "2023-12-01"
+								},
+								{
+									"key": "createdFim",
+									"value": "2024-01-14"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "consultar Pedido por id",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/xml",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": "localhost:8080/api/v1/pedidos/1"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
