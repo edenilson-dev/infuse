@@ -1,5 +1,6 @@
 package com.eicon.Infuse.pedido.service.impl;
 
+import com.eicon.Infuse.cliente.ClientNotFoundException;
 import com.eicon.Infuse.cliente.repository.ClienteRepository;
 import com.eicon.Infuse.comum.ItensPedidoResponse;
 import com.eicon.Infuse.comum.filtro.PedidoFiltro;
@@ -49,7 +50,7 @@ public class PedidoServiceImpl implements PedidoService {
     private String dezPorcento;
     @Override
     public PedidoRespone save(PedidoRequest pedidoDto) {
-        var cliente = clienteRepository.findById(pedidoDto.getClienteId());
+        var cliente = clienteRepository.findById(pedidoDto.getClienteId()).orElseThrow(ClientNotFoundException::new);
 
         var pedido = new Pedido();
 
@@ -58,7 +59,7 @@ public class PedidoServiceImpl implements PedidoService {
         pedidoDto.setValorPedido(pedidoDto.getItens().stream().map(ItensPedido::getValorTotal).reduce(BigDecimal.ZERO, BigDecimal::add));
 
         BeanUtils.copyProperties(pedidoDto, pedido);
-        pedido.setCliente(cliente.get());
+        pedido.setCliente(cliente);
 
         if(pedido.getCreatedAt() == null) pedido.setCreatedAt(LocalDate.now());
 
